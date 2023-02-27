@@ -1,6 +1,5 @@
 <?php
-class clsSubirUsuario
-{
+class clsSubirUsuario{
     private $Usu;
     private $Email;
     private $Password;
