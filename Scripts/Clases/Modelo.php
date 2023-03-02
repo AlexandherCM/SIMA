@@ -6,7 +6,7 @@ class Modelo{
     private $host = "localhost";
     private $usuario = "root";
     private $contraseña = "";
-    private $bd = "sima";
+    private $bd = "libreria";
 
     public function conectar(){
         $conexion = mysqli_connect(

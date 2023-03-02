@@ -2,7 +2,6 @@
 <?php include("Recursos/Includes/Header.php"); ?>
 <?php include("Scripts/IniciarSesion.php"); ?>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
-
 <div class="contenedor">
     <header>
         <h1>SIMA</h1>
@@ -56,27 +55,46 @@
                         <th>
                             Contraseña
                         </th>
+                        <th>
+                            Acciones
+                        </th>
+                        <th>
+                            Imagen
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
-                <?php
+                    <?php
                     $Query = "SELECT* FROM usuario";
                     $conn = mysqli_connect(
-                        'localhost', 
-                        'root', 
-                        '', 
+                        'localhost',
+                        'root',
+                        '',
                         'libreria'
                     );
-                    $usuarios = mysqli_query($conn,$Query);
-                    
-                    while($fila = mysqli_fetch_array($usuarios)){ ?>
+                    $usuarios = mysqli_query($conn, $Query);
+
+                    while ($fila = mysqli_fetch_array($usuarios)) { ?>
                         <tr>
-                            <td class="text-center"> <?php echo $fila['ID'] ?> </td>
+                            <td class="text-center">
+                                <?php echo $fila['ID'] ?>
+                            </td>
                             <td> <?php echo $fila['Usuario'] ?> </td>
                             <td> <?php echo $fila['Correo'] ?> </td>
-                            <td> <?php echo $fila['Contraseña'] ?> </td>
+                            <td> <?php echo $fila['Contraseña'] ?> </td>    
+                            <td class="d-flex justify-content-center grid gap-3">
+
+                                <a class="g-col-6 btn btn-outline-danger" href="Scripts/mainn.php?deleteID=<?php echo $fila['ID'] ?>">
+                                    <i><img class="icono" src="Recursos/Icons/DeleteTwo.svg"></img></i>
+                                </a>
+
+                                <a class="g-col-6 btn btn-outline-success" href="Scripts/mainn.php?updateID=<?php echo $fila['ID'] ?>">
+                                    <i><img class="icono" src="Recursos/Icons/Edit.svg"></i>
+                                </a>
+
+                            </td>
                         </tr>
-                    <?php }?>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
