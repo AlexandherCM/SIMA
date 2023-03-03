@@ -26,13 +26,37 @@ tr th{
 /*  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /* Config. Iconos - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 .icono{
-    width: 15px;
+    width: 18px;
+    height: 30px;
+}
+
+.exit{
+    width: 18px;
+    height: 30px;
 }
 /*  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-/* Config. btn's - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+/* Config. btn's forms- - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+.btn-visible{
+    width: 4rem;
+    height: 4rem;
 
+    border: solid black 5px;
+    border-radius: 100%;
+
+    padding: 2px;
+    display: block;
+}
+
+.btn-visible.desactivado{
+    display: none;
+}
+
+.btn-visible:hover{
+    opacity: .5;
+    cursor: pointer;
+}
 /*  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-/* Config. Forms - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+/* Config. Forms grl.s- - - - - - - - - - - - - - - - - - - - - - - - - - */
 form fieldset p label,
 form fieldset p input{
     display: block;
@@ -41,4 +65,23 @@ form fieldset p input{
 .formularioUno.desactivar{
     display: none;
 }
+/* Formulario de los libros en el inicio  - - - - - - -  - - - - - - -  - */
+.formsLibro{
+    display: none;
+}
+
+.formsLibro.mostrar{
+    margin: auto;
+    width: 25%;
+
+    display: block;
+}
+
+.formsLibro form fieldset p{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+/*  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */

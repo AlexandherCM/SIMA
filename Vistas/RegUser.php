@@ -9,7 +9,7 @@
   </header>
 
   <div>
-    <button class="btn-formulario">Miaw</button>
+    <button class="btn-formulario" onclick="mostrar()">Miaw</button>
   </div>
 
   <div class="col-md-2 mt-4">

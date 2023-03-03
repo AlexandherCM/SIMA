@@ -70,7 +70,7 @@
                         'localhost',
                         'root',
                         '',
-                        'libreria'
+                        'sima'
                     );
                     $usuarios = mysqli_query($conn, $Query);
 
@@ -85,7 +85,7 @@
                             <td class="d-flex justify-content-center grid gap-3">
 
                                 <a class="g-col-6 btn btn-outline-danger" href="Scripts/mainn.php?deleteID=<?php echo $fila['ID'] ?>">
-                                    <i><img class="icono" src="Recursos/Icons/DeleteTwo.svg"></img></i>
+                                    <i><img class="icono" src="Recursos/Icons/Delete.svg"></img></i>
                                 </a>
 
                                 <a class="g-col-6 btn btn-outline-success" href="Scripts/mainn.php?updateID=<?php echo $fila['ID'] ?>">

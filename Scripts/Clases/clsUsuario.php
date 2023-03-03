@@ -6,8 +6,8 @@ class clsUsuario{
 
     public function __construct($usuario = null, $correo, $contraseña)
     {
-        $this->usuario      = $usuario;
-        $this->correo    = $correo;
+        $this->usuario    = $usuario;
+        $this->correo     = $correo;
         $this->contraseña = $contraseña;
     }
 
@@ -55,5 +55,3 @@ class clsUsuario{
 
 
 
-
-?>
