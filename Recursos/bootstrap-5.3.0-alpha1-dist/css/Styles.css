@@ -17,6 +17,8 @@
 .contenedor{
     margin: auto;
     width: 90%;
+
+    /* background: red; */
 }
 /*  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /* Config. Tablas - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
@@ -28,6 +30,12 @@ tr th{
 .icono{
     width: 18px;
     height: 30px;
+}
+
+.icono-addLibro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 /*  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /* Config. btn's forms- - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
@@ -66,10 +74,15 @@ form fieldset p input{
 }
 
 .formsLibro.mostrar{
+    position: absolute;
+    
     margin: auto;
-    width: 35%;
+    width: 25%;
 
     display: block;
+    left: 33.33%;
+    right: 33.33%;
+    transform: translate(0,-4.4%);
 }
 
 .formsLibro form fieldset p{
@@ -77,6 +90,14 @@ form fieldset p input{
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
+}
+
+.LibrosImg{
+    width: 10rem;
+}
+
+.tabla{
+    margin: auto;
 }
 /*  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  Config. NavVar- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */

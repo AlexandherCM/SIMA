@@ -1,19 +1,22 @@
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
 <?php include("../Recursos/Includes/Header.php"); ?>
 <?php include("../Scripts/Libro/SubirLibro.php"); ?>
+<?php include("../Scripts/Libro/MostrarLibro.php"); ?>
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
 <?php include("../Recursos/Includes/Nav.php"); ?>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
 <div class="contenedor">
-    <section class="d-flex justify-content-center mb-4">
+    <section class="icono-addLibro">
         <a>
             <img class="btn-visible" src="../Recursos/Icons/plus.svg" onclick="mostrarFormulario()">
         </a>
+        <h3>Agregar Libro</h3>
     </section>
 
-    <div class="formsLibro border bordered p-5">
+    <!-- <div class="bg-danger d-flex  flex-column  align-items-center"> -->
+    <div class="bg-light formsLibro border bordered p-5">
         <form action="" name="signup-form" method="POST" enctype="multipart/form-data">
             <legend>Agregar libro</legend>
             <fieldset>
@@ -49,22 +52,43 @@
                 </p>
                 <p>
                     <label>Unidades</label>
-                    <input type="text" name="unidades" required />
+                    <input type="number" name="unidades" required />
                 </p>
                 <p>
                     <label>Precio Unitario</label>
-                    <input type="text" name="precioUnit" required />
+                    <input type="number" name="precioUnit" required />
                 </p>
-                <!-- <p>
+                <p>
                     <label>Imagen</label>
                     <input type="file" name="imagen" required />
-                </p> -->
+                </p>
                 <div class="d-flex justify-content-center justify-content-between">
-                    <input type="button" name="" value="Cancelar" onclick="mostrarBoton()"/>
+                    <input type="button" name="" value="Cancelar" onclick="mostrarBoton()" />
                     <input type="submit" name="SubirLibro" value="Guardar Libro" />
                 </div>
             </fieldset>
         </form>
+    </div>
+    <div class="tabla mt-4 bg-warning">
+        <table class="table table-bordered border border-3 border-dark-subtle">
+            <thead>
+                <tr>
+                    <th>Imagen           </th>
+                    <th>categoria        </th>
+                    <th>titulo           </th>
+                    <th>edicion          </th>
+                    <th>editorial        </th>
+                    <th>autor            </th>
+                    <th>fechaPublicacion </th>
+                    <th>unidades         </th>
+                    <th>precioUnit       </th>
+                    <th>Acciones         </th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php MostrarLibros(); ?>
+            </tbody>
+        </table>
     </div>
 </div>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->

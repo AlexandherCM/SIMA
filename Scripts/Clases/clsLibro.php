@@ -11,7 +11,7 @@ class clsLibro
     private $precioUnit;
     private $imagen;
 
-    public function __construct($cat, $tit, $edic, $edit, $aut, $fPub, $uni, $pUni)
+    public function __construct($cat, $tit, $edic, $edit, $aut, $fPub, $uni, $pUni, $img)
     {
         $this->categoria         = $cat;
         $this->titulo            = $tit;
@@ -21,13 +21,18 @@ class clsLibro
         $this->fechaPublicacion  = $fPub;
         $this->unidades          = $uni;
         $this->precioUnit        = $pUni;
-        // $this->imagen            = $img;
+        $this->imagen            = $img;
     }
 
     public function SubirLibro($conexion)
     {
-        $Query = "INSERT INTO libro (CategoriaID, Titulo, Edicion, Editorial, Autor, FechaPublicacion, Unidades, PrecioUnit) 
-        VALUES ('$this->categoria', '$this->titulo', '$this->edicion', '$this->editorial', '$this->autor', '$this->fechaPublicacion', '$this->unidades', '$this->precioUnit')";
+        // Capturando y convirtiendo imagen - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        $cont_img = file_get_contents($this->imagen);
+        $cont_img = mysqli_real_escape_string($conexion, $cont_img);
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        $Query = "INSERT INTO libro (CategoriaID, Titulo, Edicion, Editorial, Autor, FechaPublicacion, Unidades, PrecioUnit, imagen) 
+        VALUES ('$this->categoria', '$this->titulo', '$this->edicion', '$this->editorial', '$this->autor', '$this->fechaPublicacion', '$this->unidades', '$this->precioUnit','$cont_img')";
 
         $estado = mysqli_query($conexion, $Query);
 
@@ -36,6 +41,25 @@ class clsLibro
         }
 
         $conexion->close();
+    }
+
+    public function MostrarLibro($conexion)
+    {
+        $Query = "SELECT* FROM libro";
+        $libros = mysqli_query($conexion->conectar(), $Query);
+
+
+        $resultado = mysqli_query($conexion, $Query);
+
+        if (mysqli_num_rows($resultado) > 0) {
+            $fila = mysqli_fetch_assoc($resultado);
+            $contenido_imagen = $fila['Imagen'];
+
+            header('Content-Type: image/jpeg');
+            echo $contenido_imagen;
+        } else {
+            echo "No se encontró la imagen.";
+        }
     }
 
     public function ActualizarLibro($conexion)

@@ -5,6 +5,12 @@ include("../Scripts/Clases/clsLibro.php");
 $conexion = new Modelo();
 
 if (isset($_POST['SubirLibro'])) {
+
+    if($_POST["precioUnit"] <= 0 || $_POST["unidades"] <= 0){
+        die("VALOR INACEPTBLE");
+    }
+
+
     $categoria        = $_POST["categoria"];
     $titulo           = $_POST["titulo"];
     $edicion          = $_POST["edicion"];
@@ -13,7 +19,7 @@ if (isset($_POST['SubirLibro'])) {
     $fechaPublicacion = $_POST["fechaPublicacion"];
     $unidades         = $_POST["unidades"];
     $precioUnit       = $_POST["precioUnit"];
-    // $imagen           = file_get_contents($_FILES['imagen']['tmp_name']);
+    $imagen           = $_FILES["imagen"]["tmp_name"];
     
     $ObjBD = new clsLibro(
         $categoria,
@@ -23,8 +29,8 @@ if (isset($_POST['SubirLibro'])) {
         $autor,
         $fechaPublicacion,
         $unidades,
-        $precioUnit
-        // $imagen      
+        $precioUnit,
+        $imagen      
     );
 
     $ObjBD->SubirLibro($conexion->conectar());
