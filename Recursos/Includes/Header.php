@@ -8,6 +8,8 @@
   <title>Liberia</title>
 
   <link rel="stylesheet" href="http://localhost/php/SIMA/Recursos/bootstrap-5.3.0-alpha1-dist/css/Styles.css">
+  <link rel="stylesheet" href="http://localhost/php/SIMA/Recursos/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
 </head>
+
 <body>
-<!-- Contenido - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
+  <!-- Contenido - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->

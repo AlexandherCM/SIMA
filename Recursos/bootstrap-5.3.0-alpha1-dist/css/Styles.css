@@ -29,11 +29,6 @@ tr th{
     width: 18px;
     height: 30px;
 }
-
-.exit{
-    width: 18px;
-    height: 30px;
-}
 /*  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /* Config. btn's forms- - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 .btn-visible{
@@ -72,7 +67,7 @@ form fieldset p input{
 
 .formsLibro.mostrar{
     margin: auto;
-    width: 25%;
+    width: 35%;
 
     display: block;
 }
@@ -84,4 +79,47 @@ form fieldset p input{
     text-align: center;
 }
 /*  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-/*  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Config. NavVar- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - - - - - - BARRA DE NAVEGACIÓN - - - - - - - - - - */
+.logo-exit{
+    width: 40px;
+}
+
+.logo-exit:hover{
+    opacity: .6;
+}
+
+.nav-main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+.titulo{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-main ul{
+    display: flex;
+    gap: 2rem;
+}   
+
+.nav-main ul.nav-menu li a{
+    color: white;
+    font-size: 2rem;
+
+    padding-bottom: 5px;
+}
+
+.nav-menu{
+    flex: 1;
+}
+
+.nav-menu li a:hover{
+    border-bottom: solid white 2px;
+    opacity: .6;
+}

@@ -1,10 +1,11 @@
-<?php 
-class clsUsuario{
+<?php
+class clsUsuario
+{
     private $usuario;
     private $correo;
     private $contraseña;
 
-    public function __construct($usuario = null, $correo, $contraseña)
+    public function __construct($usuario = null, $correo = null, $contraseña = null)
     {
         $this->usuario    = $usuario;
         $this->correo     = $correo;
@@ -26,16 +27,17 @@ class clsUsuario{
         header("Location: http://localhost/php/SIMA/Index.php");
     }
 
-    public function LoguearUsuario($conexion){
+    public function LoguearUsuario($conexion)
+    {
         $estado = true;
 
         $Query = "SELECT* FROM usuario WHERE Correo = '$this->correo' AND  Contraseña = '$this->contraseña' ";
         $resultado = mysqli_query($conexion, $Query);
 
         $fila = mysqli_num_rows($resultado);
-        if($fila){
+        if ($fila) {
             header("Location: http://localhost/php/SIMA/Vistas/Inicio.php");
-        }else{
+        } else {
             $estado = false;
         }
 
@@ -44,14 +46,36 @@ class clsUsuario{
         return $estado;
     }
 
-    public function BorrarUsuario($conexion){
+    public function BorrarUsuario($conexion, $id)
+    {
+        $Query = "DELETE FROM Usuario WHERE ID = $id";
 
+        $resultado = mysqli_query($conexion->conectar(), $Query);
+
+        if (!$resultado) {
+            die("Operaqción fallida");
+        }
+
+        header("Location: http://localhost/php/SIMA/Index.php");
     }
-    public function ActualizarUsuario($conexion){
-        
+
+    public function ActualizarUsuario($conexion, $id)
+    {
+        $Query = "UPDATE Usuario SET Usuario = '$this->usuario', Correo = '$this->correo', Contraseña = '$this->contraseña' WHERE ID = '$id'";
+        mysqli_query($conexion->conectar(), $Query);
+
+        header("Location: http://localhost/php/SIMA/Index.php");
+    }
+
+    public function ObtenerRegistro($conexion, $id)
+    {
+        $Query = "SELECT* FROM Usuario WHERE ID = $id";
+        $resultado = mysqli_query($conexion->conectar(), $Query);
+
+        if (mysqli_num_rows($resultado) == 1) {
+            $fila = mysqli_fetch_array($resultado);
+        }
+
+        return $fila;
     }
 }
-
-
-
-

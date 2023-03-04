@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 class Modelo{
     private $host = "localhost";
     private $usuario = "root";

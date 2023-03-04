@@ -7,11 +7,6 @@
 <?php include("../Recursos/Includes/Nav.php"); ?>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
 <div class="contenedor">
-
-    <header class="principal">
-        <h2>LIBROS</h2>
-    </header>
-
     <section class="d-flex justify-content-center mb-4">
         <a>
             <img class="btn-visible" src="../Recursos/Icons/plus.svg" onclick="mostrarFormulario()">

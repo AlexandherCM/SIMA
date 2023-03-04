@@ -1,6 +1,7 @@
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
 <?php include("Recursos/Includes/Header.php"); ?>
-<?php include("Scripts/IniciarSesion.php"); ?>
+<?php include("Scripts/Usuario/IniciarSesion.php"); ?>
+<?php include("Scripts/Usuario/MostrarTabla.php"); ?>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
 <div class="contenedor">
     <header>
@@ -9,13 +10,13 @@
 
     <section class="row">
         <div class="col-md-3 mt-4">
-            <?php if (isset($_SESSION['mensaje'])) { ?>
+            <?php
+            if (isset($_SESSION['mensaje'])) { ?>
 
                 <div class="border border-1 alert alert-<?= $_SESSION['color']; ?> alert-dismissible fade show" role="alert">
                     <?= $_SESSION['mensaje']; ?>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-
             <?php session_unset();
             } ?>
             <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
@@ -34,7 +35,7 @@
                         <input type="submit" name="Loguear" value="Iniciar Sesión" />
                     </p>
                     <p>
-                        <a href="Vistas/RegUser.php">Registrarse</a>
+                        <a href="Vistas/RegUsuario.php">Registrarse</a>
                     </p>
                 </fieldset>
             </form>
@@ -64,37 +65,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                    $Query = "SELECT* FROM usuario";
-                    $conn = mysqli_connect(
-                        'localhost',
-                        'root',
-                        '',
-                        'sima'
-                    );
-                    $usuarios = mysqli_query($conn, $Query);
-
-                    while ($fila = mysqli_fetch_array($usuarios)) { ?>
-                        <tr>
-                            <td class="text-center">
-                                <?php echo $fila['ID'] ?>
-                            </td>
-                            <td> <?php echo $fila['Usuario'] ?> </td>
-                            <td> <?php echo $fila['Correo'] ?> </td>
-                            <td> <?php echo $fila['Contraseña'] ?> </td>    
-                            <td class="d-flex justify-content-center grid gap-3">
-
-                                <a class="g-col-6 btn btn-outline-danger" href="Scripts/mainn.php?deleteID=<?php echo $fila['ID'] ?>">
-                                    <i><img class="icono" src="Recursos/Icons/Delete.svg"></img></i>
-                                </a>
-
-                                <a class="g-col-6 btn btn-outline-success" href="Scripts/mainn.php?updateID=<?php echo $fila['ID'] ?>">
-                                    <i><img class="icono" src="Recursos/Icons/Edit.svg"></i>
-                                </a>
-
-                            </td>
-                        </tr>
-                    <?php } ?>
+                    <?php MostrarTabla(); ?>
                 </tbody>
             </table>
         </div>
