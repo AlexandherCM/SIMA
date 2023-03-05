@@ -20,10 +20,12 @@
         <form action="" name="signup-form" method="POST" enctype="multipart/form-data">
             <legend>Agregar libro</legend>
             <fieldset>
-                <p>
-                    <label>Titulo</label>
-                    <input type="text" name="titulo" required />
-                </p>
+                <div class="titulo-libro ">
+                    <p>
+                        <label>Titulo</label>
+                        <input type="text" name="titulo" required />
+                    </p>
+                </div>
                 <p>
                     <label>Edicion</label>
                     <input type="text" name="edicion" required />
@@ -69,26 +71,8 @@
             </fieldset>
         </form>
     </div>
-    <div class="tabla mt-4 bg-warning">
-        <table class="table table-bordered border border-3 border-dark-subtle">
-            <thead>
-                <tr>
-                    <th>Imagen           </th>
-                    <th>categoria        </th>
-                    <th>titulo           </th>
-                    <th>edicion          </th>
-                    <th>editorial        </th>
-                    <th>autor            </th>
-                    <th>fechaPublicacion </th>
-                    <th>unidades         </th>
-                    <th>precioUnit       </th>
-                    <th>Acciones         </th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php MostrarLibros(); ?>
-            </tbody>
-        </table>
+    <div class="cartasLibro mt-4">
+        <?php MostrarLibros(); ?>
     </div>
 </div>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->

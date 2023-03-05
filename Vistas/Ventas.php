@@ -8,7 +8,7 @@
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
 <?php include("../Scripts/Venta/VentaLibro.php"); ?>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
-<div class="box">
+<div class="contenedor">
 
     <div class="formsVenta bg-light border bordered p-5">
         <form action="" name="signup-form" method="POST">

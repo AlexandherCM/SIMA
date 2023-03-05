@@ -1,29 +1,49 @@
-<!---------------------------Navegación--------------------------->
-<nav class="nav-main bg-black mb-3">
-    <!--Imagen del logo-->
-    <!-- <img src="img/logoBoton.png" alt="Nota músical LOGO" class="nav-brand"> -->
-    <div class="titulo">
-        <a class="text-decoration-none text-light" href="">
-            <p>SIMA</p>
-        </a>
+<section class="sidebar">
+    <div class="nav-header">
+        <p class="logo">SIMA</p>
+        <i class="bx bx-menu-alt-right btn-menu"></i>
     </div>
-    <!--Barra de navegación-->
-    <ul class="nav-menu"> <!-- show activar -->
+    <ul class="nav-links">
         <li>
-            <a class="text-decoration-none" href="">Usuarios</a>
+            <i class="bx bx-search search-btn"></i>
+            <input type="text" placeholder="search..." />
+            <span class="tooltip">Consultar</span>
         </li>
         <li>
-            <a class="text-decoration-none" href="">Prestamos</a>
+            <a href="#">
+                <i class="bx bx-home-alt-2"></i>
+                <span class="title">Inicio</span>
+            </a>
+            <span class="tooltip">Inicio</span>
+        </li>
+ 
+        <li>
+            <a href="#">
+                <i class="bx bx-cart-alt"></i>
+                <span class="title">Venta</span>
+            </a>
+            <span class="tooltip">Venta</span>
         </li>
         <li>
-            <a class="text-decoration-none" href="">Ventas</a>
+            <a href="#">
+                <i class="bx bx-bookmark"></i>
+                <span class="title">Prestamo</span>
+            </a>
+            <span class="tooltip">Prestamo</span>
         </li>
+        <li>
+            <a href="#">
+                <i class="bx bx-user-circle"></i>
+                <span class="title">Usuario</span>
+            </a>
+            <span class="tooltip">Usuio</span>
+        </li>
+        <!-- <li>
+            <a href="#">
+                <i class="bx bx-cog"></i>
+                <span class="title">Setting</span>
+            </a>
+            <span class="tooltip">Setting</span>
+        </li> -->
     </ul>
-    <!--Icono de lupa-->
-    <div class="bg-light p-2 rounded-circle">
-        <a href="">
-            <i><img class="logo-exit m-1" src="http://localhost/php/SIMA/Recursos/Icons/Exit.svg"></i>
-        </a>
-    </div>
-</nav>
-<!---------------------------Navegación--------------------------->
+</section>
