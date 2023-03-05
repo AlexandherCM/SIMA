@@ -97,6 +97,7 @@ form fieldset p input{
 }
 
 .tabla{
+    width: 70%;
     margin: auto;
 }
 /*  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -143,4 +144,18 @@ form fieldset p input{
 .nav-menu li a:hover{
     border-bottom: solid white 2px;
     opacity: .6;
+}
+
+/* -Config. Ventas - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+.formsVenta{
+    width: 30%;
+    margin: auto;    
+}
+
+.formsVenta form fieldset p{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
 }

@@ -43,24 +43,22 @@ class clsLibro
         $conexion->close();
     }
 
-    public function MostrarLibro($conexion)
-    {
-        $Query = "SELECT* FROM libro";
-        $libros = mysqli_query($conexion->conectar(), $Query);
+    // public function MostrarLibro($conexion)
+    // {
+    //     $Query = "SELECT* FROM libro";
 
+    //     $resultado = mysqli_query($conexion, $Query);
 
-        $resultado = mysqli_query($conexion, $Query);
+    //     if (mysqli_num_rows($resultado) > 0) {
+    //         $fila = mysqli_fetch_assoc($resultado);
+    //         $contenido_imagen = $fila['Imagen'];
 
-        if (mysqli_num_rows($resultado) > 0) {
-            $fila = mysqli_fetch_assoc($resultado);
-            $contenido_imagen = $fila['Imagen'];
-
-            header('Content-Type: image/jpeg');
-            echo $contenido_imagen;
-        } else {
-            echo "No se encontró la imagen.";
-        }
-    }
+    //         header('Content-Type: image/jpeg');
+    //         echo $contenido_imagen;
+    //     } else {
+    //         echo "No se encontró la imagen.";
+    //     }
+    // }
 
     public function ActualizarLibro($conexion)
     {
@@ -86,4 +84,5 @@ class clsLibro
 
         $conexion->close();
     }
+    
 }
