@@ -40,7 +40,7 @@ $conexion = new Modelo();
                 </p>
                 <div class="d-flex justify-content-center justify-content-between">
                     <br>
-                    <input class="btn-savelector" type="submit" name="SubirLector" value="Guardar Libro" />
+                    <input class="btn-savelector" type="submit" name="SubirLector" value="Guardar Lector" />
                     <br>
                     <input class="btn-lector" type="button" name="" value="Cancelar" onclick="mostrarBotonLec()" />
                 </div>
