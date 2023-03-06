@@ -19,7 +19,7 @@ if (isset($_GET['updateID'])) {
 
     $fila = $usuario->ObtenerRegistro($conexion, $id);
 
-    //Datos obtenidos por GER
+    //Datos obtenidos por GET
     $ObtUsuario    = $fila['Usuario'];
     $ObtCorreo     = $fila['Correo'];
     $ObtContraseña = $fila['Contraseña'];

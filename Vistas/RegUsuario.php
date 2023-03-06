@@ -8,12 +8,12 @@
     <h1>SIMA</h1>
   </header>
 
-  <div>
+  <!-- <div>
     <button class="btn-formulario" onclick="mostrar()">Miaw</button>
-  </div>
+  </div> -->
 
-  <div class="col-md-2 mt-4">
-    <form class="formularioUno" action="" method="POST" name="signup-form">
+  <div class="formularioUno mt-4">
+    <form class="p-5 bg-light" action="" method="POST" name="signup-form">
       <!-- ../Scripts/main.php -->
       <fieldset>
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
@@ -31,10 +31,12 @@
         <p>
           <label>Contraseña</label>
           <input type="password" name="Contraseña" required />
+          <br>
         </p>
 
         <p>
           <input type="submit" name="SubirUsuario" value="Subir">
+          <br>
           <a href="../index.php">Iniciar Sesión</a>
         </p>
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->

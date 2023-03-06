@@ -8,8 +8,8 @@
         <h1>SIMA</h1>
     </header>
 
-    <section class="row">
-        <div class="col-md-3 mt-4">
+    <section class="formularioUno bg-light">
+        <div class=" mt-4">
             <?php
             if (isset($_SESSION['mensaje'])) { ?>
 
@@ -30,6 +30,7 @@
                     <p>
                         <label>Contraseña</label>
                         <input type="password" name="Contraseña" required />
+                        <br>
                     </p>
                     <p>
                         <input type="submit" name="Loguear" value="Iniciar Sesión" />
@@ -39,35 +40,6 @@
                     </p>
                 </fieldset>
             </form>
-        </div>
-        <div class="col-md-6 mt-4">
-            <table class="table table-bordered border border-3 border-dark-subtle">
-                <thead>
-                    <tr>
-                        <th>
-                            ID
-                        </th>
-                        <th>
-                            Usuario
-                        </th>
-                        <th>
-                            Correo
-                        </th>
-                        <th>
-                            Contraseña
-                        </th>
-                        <th>
-                            Acciones
-                        </th>
-                        <th>
-                            Imagen
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php MostrarTabla(); ?>
-                </tbody>
-            </table>
         </div>
     </section>
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->

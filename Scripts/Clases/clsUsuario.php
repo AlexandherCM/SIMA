@@ -61,7 +61,7 @@ class clsUsuario
 
     public function ActualizarUsuario($conexion, $id)
     {
-        $Query = "UPDATE Usuario SET Usuario = '$this->usuario', Correo = '$this->correo', Contraseña = '$this->contraseña' WHERE ID = '$id'";
+        $Query = "UPDATE usuario SET Usuario = '$this->usuario', Correo = '$this->correo', Contraseña = '$this->contraseña' WHERE ID = '$id'";
         mysqli_query($conexion->conectar(), $Query);
 
         header("Location: http://localhost/php/SIMA/Index.php");
@@ -69,7 +69,7 @@ class clsUsuario
 
     public function ObtenerRegistro($conexion, $id)
     {
-        $Query = "SELECT* FROM Usuario WHERE ID = $id";
+        $Query = "SELECT* FROM usuario WHERE ID = $id";
         $resultado = mysqli_query($conexion->conectar(), $Query);
 
         if (mysqli_num_rows($resultado) == 1) {

@@ -23,11 +23,10 @@ function MostrarLibros()
                         <b>Disponibles:      </b> <?php echo $fila['Unidades']        ?><br>
                         <b>Precio:           </b> <?php echo $fila['PrecioUnit']      ?><br>
                     </p> 
-                    <a class="g-col-6 btn btn-outline-danger">
+                    <a class="g-col-6 btn btn-outline-danger" href="../Scripts/Libro/Main.php?deleteID=<?php echo $fila['ID'] ?>" >
                         <i><img class="icono" src="../Recursos/Icons/Delete.svg"></i>
                     </a>
-
-                    <a class="g-col-6 btn btn-outline-success">
+                    <a class="g-col-6 btn btn-outline-success" href="../Scripts/Libro/Main.php?updateID=<?php echo $fila['ID'] ?>">
                         <i><img class="icono" src="../Recursos/Icons/Edit.svg"></i>
                     </a>
                     </div>

@@ -3,17 +3,53 @@
 
 <?php include("../Scripts/Prestamo/ImprimirLibros.php"); ?>
 <?php include("../Scripts/Prestamo/ImprimirLectores.php"); ?>
-<?php include("../Scripts/Prestamo/PrestamoLibro.php"); ?>
 <?php include("../Scripts/Prestamo/MostrarPrestamos.php"); ?>
-<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
+
+<?php include("../Scripts/Clases/Modelo.php"); 
+$conexion = new Modelo();
+?>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
 <?php include("../Recursos/Includes/Nav.php"); ?>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
 
 <div class="contenedor">
-    <div class="row cont-prest">
+<section class="icono-addLibro">
+        <a>
+            <img class="btn-visible" src="../Recursos/Icons/plus.svg" onclick="mostrarFormularioLec()">
+        </a>
+        <h3>Agregar Lector</h3>
+    </section>
+    
+<div class="bg-light formsLector border bordered p-5">
+        <form action="../Scripts/Lector/SubirLector.php" name="signup-form" method="POST" enctype="multipart/form-data">
+            <legend>Agregar Lector</legend>
+            <fieldset>
+                <div class="titulo-libro ">
+                    <p>
+                        <label>Matricula</label>
+                        <input type="text" name="Matricula" required />
+                    </p>
+                </div>
+                <p>
+                    <label>Nombre</label>
+                    <input type="text" name="Nombre" required />
+                </p>
+                <p>
+                    <label>Dirección</label>
+                    <input type="text" name="Direccion" required />
+                </p>
+                <div class="d-flex justify-content-center justify-content-between">
+                    <br>
+                    <input class="btn-savelector" type="submit" name="SubirLector" value="Guardar Libro" />
+                    <br>
+                    <input class="btn-lector" type="button" name="" value="Cancelar" onclick="mostrarBotonLec()" />
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="box-prestamo row cont-prest">
         <div class="formsPrestamo bg-light border bordered p-5 col-md-3">
-            <form action="" name="signup-form" method="POST">
+            <form action="../Scripts/Prestamo/PrestamoLibro.php" name="signup-form" method="POST">
                 <fieldset>
                     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
                     <legend>Prestamos</legend>
@@ -37,7 +73,7 @@
                     </p>
                     <p>
                         <label>Fecha</label>
-                        <input type="date">
+                        <input type="date" name="fechaPrestamo">
                     </p>
                     <div>
                         <input type="submit" name="SubirPrestamo" value="Realizar prestamo" />
@@ -53,7 +89,6 @@
                         <th>Lector           </th>
                         <th>Libro            </th>
                         <th>Fecha Prestamo   </th>
-                        <th>Fecha Devolucion </th>
                         <th>Estatus          </th>
                     </tr>
                 </thead>

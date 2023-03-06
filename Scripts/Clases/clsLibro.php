@@ -11,7 +11,7 @@ class clsLibro
     private $precioUnit;
     private $imagen;
 
-    public function __construct($cat, $tit, $edic, $edit, $aut, $fPub, $uni, $pUni, $img)
+    public function __construct($cat = null, $tit = null, $edic = null, $edit = null, $aut = null, $fPub = null, $uni = null, $pUni = null, $img = null)
     {
         $this->categoria         = $cat;
         $this->titulo            = $tit;
@@ -42,47 +42,37 @@ class clsLibro
 
         $conexion->close();
     }
-
-    // public function MostrarLibro($conexion)
-    // {
-    //     $Query = "SELECT* FROM libro";
-
-    //     $resultado = mysqli_query($conexion, $Query);
-
-    //     if (mysqli_num_rows($resultado) > 0) {
-    //         $fila = mysqli_fetch_assoc($resultado);
-    //         $contenido_imagen = $fila['Imagen'];
-
-    //         header('Content-Type: image/jpeg');
-    //         echo $contenido_imagen;
-    //     } else {
-    //         echo "No se encontró la imagen.";
-    //     }
-    // }
-
-    public function ActualizarLibro($conexion)
+    public function ActualizarLibro($conexion, $id)
     {
-        $Query = "UPDATE libro SET Categoria = '$this->categoria', Titulo = '$this->titulo', Edicion = '$this->edicion', Editorial = '$this->editorial', Autor = '$this->autor', FechaPublicacion = '$this->fechaPublicacion', Unidades = '$this->unidades', PrecioUnit = '$this->precioUnit'";
+        $Query = "UPDATE libro SET Titulo = '$this->titulo', Edicion = '$this->edicion', Editorial = '$this->editorial', Autor = '$this->autor', Unidades = '$this->unidades', PrecioUnit = '$this->precioUnit' WHERE ID = '$id'";
 
-        if (mysqli_query($conexion, $Query)) {
-            echo "El libro se ha actualizado correctamente";
-        } else {
-            echo "Error al actualizar el libro: " . mysqli_error($conexion);
-        }
-        $conexion->close();
+        mysqli_query($conexion->conectar(), $Query);
+
+        header("Location: http://localhost/php/SIMA/Vistas/Inicio.php");
     }
 
     public function EliminarLibro($conexion, $ID)
     {
         $Query = "DELETE FROM libro WHERE id = $ID";
 
-        if (mysqli_query($conexion, $Query)) {
+        if (mysqli_query($conexion->conectar(), $Query)) {
             echo "El libro se ha eliminado correctamente";
         } else {
             echo "Error al eliminar el libro: " . mysqli_error($conexion);
         }
-
-        $conexion->close();
+        
+        header("Location: http://localhost/php/SIMA/Vistas/Inicio.php");
     }
     
+    public function ObtenerRegistro($conexion, $id)
+    {
+        $Query = "SELECT* FROM libro WHERE ID = $id";
+        $resultado = mysqli_query($conexion->conectar(), $Query);
+
+        if (mysqli_num_rows($resultado) == 1) {
+            $fila = mysqli_fetch_array($resultado);
+        }
+
+        return $fila;
+    }
 }

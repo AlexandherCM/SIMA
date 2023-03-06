@@ -10,7 +10,7 @@
             <span class="tooltip">Consultar</span>
         </li>
         <li>
-            <a href="#">
+            <a href="http://localhost/php/SIMA/Vistas/Inicio.php">
                 <i class="bx bx-home-alt-2"></i>
                 <span class="title">Inicio</span>
             </a>
@@ -18,32 +18,26 @@
         </li>
  
         <li>
-            <a href="#">
+            <a href="http://localhost/php/SIMA/Vistas/Ventas.php">
                 <i class="bx bx-cart-alt"></i>
                 <span class="title">Venta</span>
             </a>
             <span class="tooltip">Venta</span>
         </li>
         <li>
-            <a href="#">
+            <a href="http://localhost/php/SIMA/Vistas/Prestamo.php">
                 <i class="bx bx-bookmark"></i>
                 <span class="title">Prestamo</span>
             </a>
             <span class="tooltip">Prestamo</span>
         </li>
         <li>
-            <a href="#">
+            <a href="http://localhost/php/SIMA/Vistas/Usuarios.php" >
                 <i class="bx bx-user-circle"></i>
                 <span class="title">Usuario</span>
             </a>
-            <span class="tooltip">Usuio</span>
+            <span class="tooltip">Usuario</span>
         </li>
-        <!-- <li>
-            <a href="#">
-                <i class="bx bx-cog"></i>
-                <span class="title">Setting</span>
-            </a>
-            <span class="tooltip">Setting</span>
-        </li> -->
+
     </ul>
 </section>
