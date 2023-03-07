@@ -31,7 +31,7 @@ class clsLibro
         $cont_img = mysqli_real_escape_string($conexion, $cont_img);
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-        $Query = "INSERT INTO libro (CategoriaID, Titulo, Edicion, Editorial, Autor, FechaPublicacion, Unidades, PrecioUnit, imagen) 
+        $Query = "INSERT INTO libro (CategoriaID, Titulo, Edicion, Editorial, Autor, FechaPublicacion, Unidades, PrecioUnit, Imagen) 
         VALUES ('$this->categoria', '$this->titulo', '$this->edicion', '$this->editorial', '$this->autor', '$this->fechaPublicacion', '$this->unidades', '$this->precioUnit','$cont_img')";
 
         $estado = mysqli_query($conexion, $Query);

@@ -32,7 +32,7 @@ function MostrarLibros()
                     </div>
                     <div class="col-6 col-sm-4">
                         <img class="LibrosImg" src="data:image/jpeg;base64,
-                        <?php echo base64_encode($fila['imagen']); ?>"/>
+                        <?php echo base64_encode($fila['Imagen']); ?>"/>
                     </div>
                 </div>
             </div>
