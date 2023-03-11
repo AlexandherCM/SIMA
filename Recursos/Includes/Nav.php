@@ -34,9 +34,9 @@
             <span class="tooltip">Usuario</span>
         </li>
         <li>
-            <a id="" href="">
+            <a id="" href="http://localhost/php/SIMA">
                 <!-- <i class="bx bx-search search-btn"></i> -->
-                <i></i>
+                <i class='bx bx-exit'></i>
                 <!-- <input type="text" placeholder="search..." /> -->
                 <span class="tooltip">Cerrar Sesión</span>
             </a>
