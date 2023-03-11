@@ -38,8 +38,9 @@
                 <!-- <i class="bx bx-search search-btn"></i> -->
                 <i class='bx bx-exit'></i>
                 <!-- <input type="text" placeholder="search..." /> -->
-                <span class="tooltip">Cerrar Sesión</span>
+                <span class="title">Cerrar Sesión</span>
             </a>
+            <span class="tooltip">Cerrar Sesión</span>
         </li>
     </ul>
 </section>
