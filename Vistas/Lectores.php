@@ -2,12 +2,12 @@
 <?php include("../Recursos/Includes/Header.php"); ?>
 <?php include("../Recursos/Includes/Nav.php"); ?>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
-<?php include("../Scripts/Usuario/MostrarTabla.php"); ?>
+<?php include("../Scripts/Lector/MostrarLectores.php"); ?>
 <?php include("../Scripts/Clases/Modelo.php"); ?>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
 <div class="contenedor">
     <header>
-        <h1>Usuarios</h1>
+        <h1>Lectores</h1>
     </header>
     <section class = "bg-light">
         <div class="d-flex justify-content-cente mt-4">
@@ -15,16 +15,13 @@
                 <thead>
                     <tr>
                         <th>
-                            ID
+                            Matricula
                         </th>
                         <th>
-                            Usuario
+                            Nombre
                         </th>
                         <th>
-                            Correo
-                        </th>
-                        <th>
-                            Contraseña
+                            Dirección
                         </th>
                         <th>
                             Acciones
@@ -32,7 +29,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php MostrarTabla(); ?>
+                    <?php MostrarLectores(); ?>
                 </tbody>
             </table>
         </div>

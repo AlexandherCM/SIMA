@@ -15,11 +15,11 @@
             <td> <?php echo $fila['Contraseña'] ?> </td>
             <td class="d-flex justify-content-center grid gap-3">
 
-                <a class="g-col-6 btn btn-outline-danger" href="Scripts/Usuario/Main.php?deleteID=<?php echo $fila['ID'] ?>">
+                <a class="g-col-6 btn btn-outline-danger" href="../Scripts/Usuario/Main.php?deleteID=<?php echo $fila['ID'] ?>">
                     <i><img class="icono" src="../Recursos/Icons/Delete.svg"></img></i>
                 </a>
 
-                <a class="g-col-6 btn btn-outline-success" href="Scripts/Usuario/Main.php?updateID=<?php echo $fila['ID'] ?>">
+                <a class="g-col-6 btn btn-outline-success" href="../Scripts/Usuario/Main.php?updateID=<?php echo $fila['ID'] ?>">
                     <i><img class="icono" src="../Recursos/Icons/Edit.svg"></i>
                 </a>
             </td>

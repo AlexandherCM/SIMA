@@ -27,11 +27,11 @@
             <span class="tooltip">Prestamo</span>
         </li>
         <li>
-            <a href="http://localhost/php/SIMA/Vistas/Usuarios.php">
+            <a href="http://localhost/php/SIMA/Vistas/Lectores.php">
                 <i class="bx bx-user-circle"></i>
-                <span class="title">Usuario</span>
+                <span class="title">Lectores</span>
             </a>
-            <span class="tooltip">Usuario</span>
+            <span class="tooltip">Lectores</span>
         </li>
         <li>
             <a id="" href="http://localhost/php/SIMA">
@@ -44,8 +44,3 @@
         </li>
     </ul>
 </section>
-<style>
-    #exit {
-        width: 50%;
-    }
-</style>
