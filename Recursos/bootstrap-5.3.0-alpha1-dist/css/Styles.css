@@ -26,15 +26,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(../../Imgs/fondo-negro-verde.svg);
   background-size: cover;
   background-position: center;
   display: block;
   background-repeat: no-repeat;
+  background-image: url(../../Imgs/fondo-negro-verde.svg);
 }
 
 .contenedor {
-  width: 85%;
+  width: 80%;
   margin: auto;
 
   margin-top: 2rem;
@@ -58,6 +58,25 @@ tr th {
   flex-direction: column;
   align-items: center;
 }
+
+.venta{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.elementos-venta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 2rem;
+}
+.elementos-venta div:first-child{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 /*  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /* Config. btn's forms- - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 .btn-visible {
@@ -71,11 +90,20 @@ tr th {
   display: block;
 }
 
+.btn-venta {
+  width: 4rem;
+  height: 4rem;
+
+  padding: 2px;
+  display: block;
+}
+
 .btn-visible.desactivado {
   display: none;
 }
 
-.btn-visible:hover {
+.btn-visible:hover,
+.btn-venta:hover {
   opacity: 0.5;
   cursor: pointer;
 }
@@ -157,8 +185,39 @@ form fieldset p{
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin: auto;
-  overflow: scroll;
-  overflow-x: hidden;
+
+  overflow-y: scroll;
+  
+  height: 65vh;
+  width: 70vw;
+}
+
+@media(max-width: 1500px){
+  .cartasLibro {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    margin: auto;
+  
+    overflow-y: scroll;
+    
+    height: 90vh;
+    width: 70vw;
+  }
+}
+
+@media(min-width: 3000px){
+  .cartasLibro {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    margin: auto;
+  
+    overflow-y: scroll;
+    
+    height: 50vh;
+    width: 70vw;
+  }
 }
 
 .formsLibro form legend{
@@ -236,6 +295,7 @@ form fieldset p{
   background: #fff;
   padding: 8px 16px;
   transition: var(--transition);
+  
 }
 
 .sidebar.expand {
@@ -512,8 +572,13 @@ form fieldset p label{
   border: white;
   border-radius: 50px;
   margin-top: 10px;
-  width: 30%;
-  margin: auto;
+}
+
+.apartado-venta{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+  /* grid-template-columns: repeat(2, 1fr); */
 }
 
 .formsLector,
@@ -614,3 +679,5 @@ form fieldset p select option{
   background: #37644c;
   color: white;
 }
+
+

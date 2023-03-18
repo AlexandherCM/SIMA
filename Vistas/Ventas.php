@@ -7,8 +7,23 @@
 <?php include("../Scripts/Venta/ImprimirLectores.php"); ?>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
 <?php include("../Scripts/Venta/VentaLibro.php"); ?>
+<?php include("../Scripts/Venta/MostrarVentas.php"); ?>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
-<div class="contenedor">
+<section class="venta mt-4">
+    <div class="elementos-venta">
+        <div>
+            <a href="../Scripts/Venta/BorrarVentas.php?delete=true">
+                <img class="btn-venta" src="../Recursos/Icons/Delete.svg">
+            </a>
+            <h3>Vaciar ventas</h3>
+        </div>
+        <div>
+            <h3><b>Ventas totales: <?php echo "$".obtenerTotalVentas($conexion->conectar()); ?></b></h3>
+        </div>
+    </div>
+</section>
+
+<div class="contenedor apartado-venta">
     <div class="box-venta bg-light border bordered p-5">
         <form action="" name="signup-form" method="POST">
             <fieldset>
@@ -51,6 +66,23 @@
                 </div>
             </fieldset>
         </form>
+    </div>
+    <div class="">
+        <table class="table table-bordered border border-3 border-dark-subtle">
+            <thead>
+                <tr class="columnasVenta">
+                    <th>Folio </th>
+                    <th>Libro </th>
+                    <th>Lector </th>
+                    <th>Unidades </th>
+                    <th>Precio unitario </th>
+                    <th>Total </th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php MostrarVentas($conexion->conectar()); ?>
+            </tbody>
+        </table>
     </div>
 </div>
 <script>

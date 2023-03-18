@@ -5,22 +5,22 @@
 <?php include("../Scripts/Prestamo/ImprimirLectores.php"); ?>
 <?php include("../Scripts/Prestamo/MostrarPrestamos.php"); ?>
 
-<?php include("../Scripts/Clases/Modelo.php"); 
+<?php include("../Scripts/Clases/Modelo.php");
 $conexion = new Modelo();
 ?>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
 <?php include("../Recursos/Includes/Nav.php"); ?>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
 
-<div class="contenedor">
-<section class="icono-addLibro">
+<div class="contenedor">    
+    <section class="icono-addLibro">
         <a>
             <img class="btn-visible" src="../Recursos/Icons/plus.svg" onclick="mostrarFormularioLec()">
         </a>
         <h3>Agregar Lector</h3>
     </section>
-    
-<div class="bg-light formsLector border bordered p-5">
+
+    <div class="bg-light formsLector border bordered p-5">
         <form action="../Scripts/Lector/SubirLector.php" name="signup-form" method="POST" enctype="multipart/form-data">
             <legend>Agregar Lector</legend>
             <fieldset>
@@ -85,11 +85,11 @@ $conexion = new Modelo();
             <table class="table table-bordered border border-3 border-dark-subtle">
                 <thead>
                     <tr>
-                        <th>ID               </th>
-                        <th>Lector           </th>
-                        <th>Libro            </th>
-                        <th>Fecha Prestamo   </th>
-                        <th>Estatus          </th>
+                        <th>ID </th>
+                        <th>Lector </th>
+                        <th>Libro </th>
+                        <th>Fecha Prestamo </th>
+                        <th>Estatus </th>
                     </tr>
                 </thead>
                 <tbody>

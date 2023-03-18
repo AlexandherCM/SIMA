@@ -8,9 +8,10 @@ if(isset($_POST['SubirUsuario'])){
     $ObjBD = new clsUsuario($_POST["Usuario"],$_POST["Correo"], $_POST["Contraseña"]); 
     $ObjBD->SubirUsuario($conexion->conectar());  
 
-    session_start();
-    $_SESSION['mensaje'] = 'Usuario Guardado satisfactoriamente';
-    $_SESSION['color'] = 'success';
+    $mensaje = 'Usuario Guardado satisfactoriamente';
+    $color   = 'success';
+
+    header("Location: http://localhost/php/SIMA/Index.php?mensaje=$mensaje&color=$color");
 }
 
 ?>

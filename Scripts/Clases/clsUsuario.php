@@ -24,7 +24,6 @@ class clsUsuario
         }
 
         $conexion->close();
-        header("Location: http://localhost/php/SIMA/Index.php");
     }
 
     public function LoguearUsuario($conexion)
@@ -36,10 +35,16 @@ class clsUsuario
 
         $fila = mysqli_num_rows($resultado);
         if ($fila) {
+            $fila = mysqli_fetch_array($resultado);
+            $usuario = $fila['Usuario'];
+        
+            setcookie("usuarioActivo", "Bienvenid@: $usuario", time() + 60, '/');
+            setcookie('color', 'success', time() + 60, '/');
+        
             header("Location: http://localhost/php/SIMA/Vistas/Inicio.php");
         } else {
             $estado = false;
-        }
+        }        
 
         $conexion->close();
         // echo "<script>alert('$estado')</script>";

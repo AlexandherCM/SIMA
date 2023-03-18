@@ -28,4 +28,17 @@ class clsVenta
 
         $conexion->close();
     }
+
+    public function BorrarVentas($conexion)
+    {
+        $Query = "DELETE FROM venta";
+
+        $estado = mysqli_query($conexion, $Query);
+
+        if (!$estado) {
+            die("Ocurrio un error en el envio de datos");
+        }
+
+        $conexion->close();
+    }
 }
